@@ -1,19 +1,35 @@
 public class Exercises {
+	
+//	public static void main(String args[]) {
+//		commonEnd(a, b);
+//	}
 
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
 			return false;
+		} else if (a[0] == b[0] || a[a.length-1] == b[b.length-1]) {
+			return true;
 		}
-		
-		// write your code here
-		
 		return false;	// default return value to ensure compilation
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
+		if (values == null || values.length < n || n < 1) {
+			String[] empty = new String[0];
+			return empty;
+		} else {
+			String[] newArray = new String[n*2];
+			int x = n;
+			for(int i = 0; i < n; i++) {
+				newArray[i] = values[i];
+			}
+			for(int i = values.length-n; i < values.length; i++) {
+				newArray[x] = values[i];
+				x++;
+			}
+			return newArray;
+		}
 		
-		return null;	// default return value to ensure compilation
 	}
 	
 	public int difference(int[] numbers) {
