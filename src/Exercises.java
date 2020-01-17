@@ -29,14 +29,26 @@ public class Exercises {
 			}
 			return newArray;
 		}
-		//commit
-		
 	}
 	
 	public int difference(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 1) {
+			return -1;	
+		} else {
+			int max = numbers[0];
+			int min = numbers[0];
+			for (int i = 1; i < numbers.length; i++) {
+	             if (numbers[i] > max) {
+	            	 max = numbers[i];  
+	             }
+	             if (numbers[i] < min) {
+	            	 min = numbers[i];  
+	             }
+			}
+			return max-min;
+		}
 		
-		return -1;		// default return value to ensure compilation
+		//return -1;		// default return value to ensure compilation
 	}
 	
 	public double biggest(double[] numbers) {
