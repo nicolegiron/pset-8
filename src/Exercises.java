@@ -1,8 +1,4 @@
 public class Exercises {
-	
-//	public static void main(String args[]) {
-//		commonEnd(a, b);
-//	}
 
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
@@ -10,7 +6,7 @@ public class Exercises {
 		} else if (a[0] == b[0] || a[a.length-1] == b[b.length-1]) {
 			return true;
 		}
-		return false;	// default return value to ensure compilation
+		return false;
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
@@ -47,12 +43,30 @@ public class Exercises {
 			}
 			return max-min;
 		}
-		
-		//return -1;		// default return value to ensure compilation
 	}
 	
 	public double biggest(double[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 3 || numbers.length % 2 == 0) {
+			return -1;
+		} else {
+			for(int i = 0; i < numbers.length; i++) {
+				if(numbers[i] < 0) {
+					return -1;
+				}
+			}
+			double first = numbers[0];
+			double middle = numbers[numbers.length/2];
+			double last = numbers[numbers.length-1];
+			if(first > middle && first > last) {
+				return first;
+			} else if (middle > first && middle > last) {
+				return middle;
+			} else if (last > first && last > middle) {
+				return last;
+			} else if (first == middle && middle == last) {
+				return first;
+			}
+		}
 		
 		return -1;		// default return value to ensure compilation
 	}
