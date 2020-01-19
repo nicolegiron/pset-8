@@ -148,38 +148,20 @@ public class Exercises {
 		if (numbers == null || numbers.length < 2) {
 			return false;
 		} else {
-			int[] firstHalf = new int[numbers.length/2];
-			int[] secondHalf = new int[numbers.length/2];
-			int firstSum = 0;
-			int secondSum = 0;
-			for(int i = 0; i < numbers.length/2; i++) {
-				firstHalf[i] = numbers[i];
+			int left = 0;
+			int right = 0;
+			for(int x = 0; x < numbers.length; x++) {
+				right += numbers[x];
 			}
-			for(int i = 0; i < firstHalf.length; i++) {
-				firstSum += firstHalf[i];
+			for(int i = 0; i < numbers.length-1; i++) {
+				if(left != right) {
+					left += numbers[i];
+					right -= numbers[i];
+			    }
 			}
-			if(numbers.length % 2 == 0) {
-				for(int i = numbers.length/2, x = 0; i < numbers.length; i++) {
-					secondHalf[x] = numbers[i];
-					x++;
-				}
-			} else {
-				for(int i = numbers.length/2+1, x = 0; i < numbers.length; i++) {
-					secondHalf[x] = numbers[i];
-					x++;
-				}
-			}
-			for(int i = 0; i < secondHalf.length; i++) {
-				secondSum += secondHalf[i];
-			}
-			System.out.println("first sum: " + firstSum);
-			System.out.println("second sum: " + secondSum);
-			if(firstSum == secondSum) {
-				return true;
-			}
-			
+		return left==right;
 		}
-		return false;	// default return value to ensure compilation
+//		return false;	// default return value to ensure compilation
 	}
 	
 	public int clumps(String[] values) {
