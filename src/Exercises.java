@@ -162,10 +162,17 @@ public class Exercises {
 	}
 	
 	public int clumps(String[] values) {
-		if (values == null || values.length < 2) {
+		if (values == null) {
 			return -1;
 		} else {
-			
+			int clumps = 0;
+			for(int i = 0; i < values.length; i++) {
+				String currentInt = values[i];
+				
+			}
+			if(clumps > 1) {
+				return clumps;
+			}
 		}
 		
 		return -1;		// default return value to ensure compilation
