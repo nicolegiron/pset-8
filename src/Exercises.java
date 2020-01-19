@@ -129,9 +129,21 @@ public class Exercises {
 	public boolean consecutive(int[] numbers) {
 		if (numbers == null || numbers.length < 3) {
 			return false;
+		} else {
+			int correct = 0;
+			for(int i = 0; i < numbers.length-2; i++) {
+				if((numbers[i] % 2 == 0 && numbers[i+1] % 2 == 0 && numbers[i+2] % 2 == 0) || numbers[i] % 2 == 1 && numbers[i+1] % 2 == 1 && numbers[i+2] % 2 == 1) {
+					correct += 1;
+				}
+			}
+			if(correct > 0) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 		
-		return false;	// default return value to ensure compilation
+//		return false;	// default return value to ensure compilation
 	}
 	
 	public boolean balance(int[] numbers) {
