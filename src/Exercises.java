@@ -148,9 +148,37 @@ public class Exercises {
 		if (numbers == null || numbers.length < 2) {
 			return false;
 		} else {
+			int[] firstHalf = new int[numbers.length/2];
+			int[] secondHalf = new int[numbers.length/2];
+			int firstSum = 0;
+			int secondSum = 0;
+			for(int i = 0; i < numbers.length/2; i++) {
+				firstHalf[i] = numbers[i];
+			}
+			for(int i = 0; i < firstHalf.length; i++) {
+				firstSum += firstHalf[i];
+			}
+			if(numbers.length % 2 == 0) {
+				for(int i = numbers.length/2, x = 0; i < numbers.length; i++) {
+					secondHalf[x] = numbers[i];
+					x++;
+				}
+			} else {
+				for(int i = numbers.length/2+1, x = 0; i < numbers.length; i++) {
+					secondHalf[x] = numbers[i];
+					x++;
+				}
+			}
+			for(int i = 0; i < secondHalf.length; i++) {
+				secondSum += secondHalf[i];
+			}
+			System.out.println("first sum: " + firstSum);
+			System.out.println("second sum: " + secondSum);
+			if(firstSum == secondSum) {
+				return true;
+			}
 			
 		}
-		
 		return false;	// default return value to ensure compilation
 	}
 	
