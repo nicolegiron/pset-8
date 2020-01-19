@@ -104,8 +104,6 @@ public class Exercises {
 			}
 			return false;
 		}
-		
-//		return false;	// default return value to ensure compilation
 	}
 	
 	public boolean everywhere(int[] numbers, int x) {
@@ -161,11 +159,14 @@ public class Exercises {
 			}
 		return left==right;
 		}
-//		return false;	// default return value to ensure compilation
 	}
 	
 	public int clumps(String[] values) {
-		// write your code here
+		if (values == null || values.length < 2) {
+			return -1;
+		} else {
+			
+		}
 		
 		return -1;		// default return value to ensure compilation
 	}
