@@ -67,8 +67,7 @@ public class Exercises {
 				return first;
 			}
 		}
-		
-		return -1;		// default return value to ensure compilation
+		return -1;
 	}
 	
 	public String[] middle(String[] values) {
@@ -166,15 +165,18 @@ public class Exercises {
 			return -1;
 		} else {
 			int clumps = 0;
-			for(int i = 0; i < values.length; i++) {
-				String currentInt = values[i];
-				
-			}
-			if(clumps > 1) {
-				return clumps;
-			}
+			boolean isClump = false;
+		  for(int i = 0; i < values.length - 1; i++) {
+			  if (isClump) {
+				  if(!values[i].equals(values[i+1])) {
+					  isClump = false;
+				  }
+			  } else if (values[i].equals(values[i+1])) {
+				  isClump = true;
+				  clumps++;
+			  }
+		  }
+		  return clumps;
 		}
-		
-		return -1;		// default return value to ensure compilation
 	}
 }
